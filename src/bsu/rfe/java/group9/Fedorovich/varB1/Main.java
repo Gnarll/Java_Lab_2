@@ -234,8 +234,31 @@ public class Main extends JFrame {
             textFieldResult.setText("0");
         }
     });
-    
+
+        Box hboxButtons = Box.createHorizontalBox();
+        hboxButtons.add(Box.createHorizontalGlue());
+        hboxButtons.add(buttonCalc);
+        hboxButtons.add(Box.createHorizontalStrut(30));
+        hboxButtons.add(buttonReset);
+        hboxButtons.add(Box.createHorizontalGlue());
+        hboxButtons.setBorder(
+                BorderFactory.createLineBorder(Color.GREEN));
+
+        // Связать области воедино в компоновке BoxLayout
+        Box contentBox = Box.createVerticalBox();
+        contentBox.add(Box.createVerticalGlue());
+        contentBox.add(hboxFormulaType);
+        contentBox.add(hboxVariables);
+        contentBox.add(hboxMemoryType);
+        contentBox.add(memory_result);
+        contentBox.add(hboxResult);
+        contentBox.add(hboxButtons);
+        contentBox.add(Box.createVerticalGlue());
+        getContentPane().add(contentBox, BorderLayout.CENTER);
+
 }
+
+
 
     // Главный метод класса
     public static void main(String[] args) {
